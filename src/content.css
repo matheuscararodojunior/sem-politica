@@ -1,0 +1,38 @@
+[data-sp="hide"] {
+  display: none !important;
+}
+
+[data-sp="blur"] {
+  filter: blur(12px) grayscale(1) !important;
+  opacity: 0.45 !important;
+  cursor: pointer !important;
+}
+[data-sp="blur"] * {
+  pointer-events: none !important;
+}
+
+/* Players (vídeo aberto no YouTube, Shorts, Reels): mantém o espaço pra não quebrar a rolagem. */
+[data-sp="cover"] {
+  background: #111 !important;
+  cursor: pointer !important;
+}
+[data-sp="cover"] * {
+  visibility: hidden !important;
+}
+[data-sp="cover"]::before {
+  content: "🚫  Política escondida\A(" attr(data-sp-term) ")\A\A clique pra ver mesmo assim";
+  white-space: pre-line;
+  position: absolute;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  background: #111;
+  color: #bbb;
+  font: 600 15px/1.5 system-ui, sans-serif;
+  visibility: visible !important;
+  pointer-events: none;
+}

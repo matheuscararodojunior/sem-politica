@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Sem Política",
+  "version": "1.0.0",
+  "description": "Esconde conteúdo sobre política brasileira no YouTube, Google e Instagram.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Sem Política",
+    "default_popup": "options.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.instagram.com/*",
+        "*://*.google.com/*",
+        "*://*.google.com.br/*"
+      ],
+      "js": ["src/filter.js", "src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sem-politica@local",
+      "strict_min_version": "121.0"
+    }
+  }
+}

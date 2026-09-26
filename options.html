@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sem Política</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🚫 Sem Política</h1>
+      <label class="toggle"><input type="checkbox" id="enabled" /> Ativado</label>
+    </header>
+    <p id="count" class="muted"></p>
+
+    <fieldset>
+      <legend>Sites</legend>
+      <label><input type="checkbox" data-site="youtube" /> YouTube (vídeos, Shorts, vídeo aberto)</label>
+      <label><input type="checkbox" data-site="google" /> Google (pesquisa, notícias, Google News)</label>
+      <label><input type="checkbox" data-site="instagram" /> Instagram (feed, Reels, Explorar)</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Como esconder</legend>
+      <label><input type="radio" name="mode" value="hide" /> Sumir totalmente</label>
+      <label><input type="radio" name="mode" value="blur" /> Borrar (clique pra ver) — bom pra achar falso positivo</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Palavras</legend>
+      <label><input type="checkbox" id="useDefaults" /> Usar lista padrão (<span id="defaultsCount"></span> termos)</label>
+      <details>
+        <summary>Ver lista padrão</summary>
+        <pre id="defaultsList"></pre>
+      </details>
+      <label class="block">
+        Esconder também (um termo por linha)
+        <textarea id="extraTerms" rows="4" placeholder="ex.: trump&#10;fulano de tal"></textarea>
+      </label>
+      <label class="block">
+        Exceções — trechos que nunca contam (um por linha)
+        <textarea id="allowTerms" rows="3" placeholder="ex.: lula no vapor"></textarea>
+      </label>
+    </fieldset>
+
+    <p id="status" class="muted"></p>
+    <script src="src/filter.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
